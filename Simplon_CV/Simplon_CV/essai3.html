@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <style type="text/css">
+</head>
+<body>
+
+  img { position: absolute; left: 0px; top: 0px; }
+  #img1 {z-index: 1;}
+  #img2 {z-index: 2;}
+  #img3 {z-index: 3;}
+  #img4 {z-index: 4;}
+  #img5 {z-index: 5;}
+</style>
+
+<img src="images/img1.jpg" id="img5">
+<img src="images/img12.jpg" id="img4">
+<img src="images/img13.jpg" id="img3">
+<img src="images/img14.jpg" id="img2">
+<img src="images/img15.jpg" id="img1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script> $(document).ready(function() {
+
+  $(function() {
+    $('img').first().fadeOut(2000, function suivante() {
+        $(this).next('img').fadeOut(2000,suivante);
+    });
+  });
+});
+</script>
+</body>
+  </head>
+
